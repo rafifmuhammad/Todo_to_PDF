@@ -17,10 +17,11 @@ class ListTask extends StatefulWidget {
 }
 
 class _ListTaskState extends State<ListTask> {
+  
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 350,
       child: (widget.titleTask == null || widget.titleTask.isEmpty)
           ? Container(
             child: Image.asset(

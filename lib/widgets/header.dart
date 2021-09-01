@@ -1,9 +1,17 @@
+import 'package:d_my_task/widgets/print_button.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
   const Header({
     Key key,
+    this.listTitle,
+    this.listType,
+    this.listTime,
   }) : super(key: key);
+
+  final List<String> listTitle;
+  final List<String> listType;
+  final List<String> listTime;
 
   @override
   Widget build(BuildContext context) {
@@ -35,24 +43,10 @@ class Header extends StatelessWidget {
             ),
           ],
         ),
-        FloatingActionButton(
-          elevation: 0,
-          backgroundColor: Colors.grey[100],
-          mini: true,
-          onPressed: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(
-                  'Belum Ada Notifikasi',
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            );
-          },
-          child: Icon(
-            Icons.print_outlined,
-            color: Colors.grey[800],
-          ),
+        PrintButton(
+          listTime: listTime,
+          listTitle: listTitle,
+          listType: listType,
         ),
       ],
     );

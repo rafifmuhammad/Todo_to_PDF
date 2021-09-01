@@ -20,7 +20,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   @override
-  void initState() { 
+  void initState() {
     super.initState();
     loadData();
   }
@@ -94,7 +94,11 @@ class _MainPageState extends State<MainPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Header(),
+                Header(
+                  listTitle: widget.titleTask,
+                  listType: widget.typeTask,
+                  listTime: widget.time,
+                ),
                 SizedBox(height: 30),
                 TitleText(
                   text: 'New Task',
@@ -113,6 +117,7 @@ class _MainPageState extends State<MainPage> {
                       text: 'My Task',
                     ),
                     InkWell(
+                      borderRadius: BorderRadius.circular(20),
                       onTap: () {
                         widget.titleTask.removeLast();
                         widget.time.removeLast();
@@ -126,7 +131,7 @@ class _MainPageState extends State<MainPage> {
                             duration: Duration(seconds: 2),
                           ),
                         );
-                        setState(() {});
+                        saveData();
                       },
                       child: DeleteButton(),
                     ),
