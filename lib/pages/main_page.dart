@@ -1,15 +1,16 @@
-import 'package:d_my_task/pages/delete_button.dart';
+import 'package:d_my_task/widgets/delete_button.dart';
 import 'package:d_my_task/pages/input_task.dart';
 import 'package:d_my_task/widgets/desc_new_task.dart';
 import 'package:d_my_task/widgets/header.dart';
 import 'package:d_my_task/widgets/list_task.dart';
 import 'package:d_my_task/widgets/title.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MainPage extends StatefulWidget {
-  List<String> time = [];
-  List<String> titleTask = [];
-  List<String> typeTask = [];
+  List<String> time;
+  List<String> titleTask;
+  List<String> typeTask;
 
   MainPage({this.titleTask, this.typeTask, this.time});
 
@@ -18,6 +19,30 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  @override
+  void initState() { 
+    super.initState();
+    loadData();
+  }
+
+  void saveData() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    setState(() {
+      pref.setStringList('title', widget.titleTask);
+      pref.setStringList('type', widget.typeTask);
+      pref.setStringList('time', widget.time);
+    });
+  }
+
+  void loadData() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    setState(() {
+      widget.titleTask = pref.getStringList('title') ?? [];
+      widget.typeTask = pref.getStringList('type') ?? [];
+      widget.time = pref.getStringList('time') ?? [];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +80,7 @@ class _MainPageState extends State<MainPage> {
                   duration: Duration(seconds: 2),
                 ),
               );
-              setState(() {});
+              saveData();
             },
             child: Icon(Icons.refresh),
           ),

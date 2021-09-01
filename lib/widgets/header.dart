@@ -30,7 +30,7 @@ class Header extends StatelessWidget {
               'Welcome, Guest',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
           ],
@@ -50,7 +50,7 @@ class Header extends StatelessWidget {
             );
           },
           child: Icon(
-            Icons.notifications_outlined,
+            Icons.print_outlined,
             color: Colors.grey[800],
           ),
         ),

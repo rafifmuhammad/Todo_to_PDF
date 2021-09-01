@@ -1,4 +1,5 @@
 import 'package:d_my_task/pages/main_page.dart';
+import 'package:d_my_task/widgets/input_field.dart';
 import 'package:d_my_task/widgets/my_input.dart';
 import 'package:flutter/material.dart';
 
@@ -89,77 +90,7 @@ class InputTask extends StatelessWidget {
                   topRight: Radius.circular(40),
                 ),
               ),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Add task',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    MyInput(
-                        icon: Icons.title,
-                        text: 'Title of task...',
-                        actionText: listTitle,
-                        controller: titleController),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    MyInput(
-                      icon: Icons.description,
-                      text: 'Type of task...',
-                      actionText: listType,
-                      controller: typeController,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    MyInput(
-                        icon: Icons.access_time,
-                        text: 'Time of task...',
-                        actionText: listTime,
-                        controller: timeController),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    RaisedButton(
-                      color: Colors.blueGrey,
-                      onPressed: () {
-                        listTitle.add(titleController.text);
-                        listType.add(typeController.text);
-                        listTime.add(timeController.text);
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'Data Ditambahkan',
-                              textAlign: TextAlign.center,
-                            ),
-                            duration: Duration(seconds: 2),
-                          ),
-                        );
-                        Navigator.pop(
-                          context,
-                          MainPage(
-                            titleTask: listTitle,
-                            typeTask: listType,
-                            time: listTime,
-                          ),
-                        );
-                      },
-                      child: Text(
-                        'Submit',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              child: InputField(listTitle: listTitle, titleController: titleController, listType: listType, typeController: typeController, listTime: listTime, timeController: timeController),
             ),
           ],
         ),

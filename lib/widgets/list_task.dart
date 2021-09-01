@@ -21,7 +21,7 @@ class _ListTaskState extends State<ListTask> {
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      child: (widget.titleTask.isEmpty)
+      child: (widget.titleTask == null || widget.titleTask.isEmpty)
           ? Container(
             child: Image.asset(
               'images/todo.png',
