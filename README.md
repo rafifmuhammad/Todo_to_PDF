@@ -2,8 +2,8 @@
 
 A new Flutter project.
 
-<img src='https://rafif-tutorial.000webhostapp.com/images/Screenshot_2021-08-31-11-25-46-40.png' width='300' height='480'>
-<img src='https://rafif-tutorial.000webhostapp.com/images/Screenshot_2021-08-31-11-25-50-54.png' width='300' height='480'>
+<img src='https://rafif-tutorial.000webhostapp.com/images/Screenshot_2021-08-31-11-25-46-40.png' width='270' height='480'>
+<img src='https://rafif-tutorial.000webhostapp.com/images/Screenshot_2021-08-31-11-25-50-54.png' width='270' height='480'>
 ## Getting Started
 
 This project is a starting point for a Flutter application.
