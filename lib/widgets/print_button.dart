@@ -88,6 +88,6 @@ class _PrintButtonState extends State<PrintButton> {
     List<int> bytes = document.save();
     document.dispose();
 
-    saveAndLaunchFile(bytes, 'Output.pdf');
+    saveAndLaunchFile(bytes, 'Kegiatan.pdf');
   }
 }

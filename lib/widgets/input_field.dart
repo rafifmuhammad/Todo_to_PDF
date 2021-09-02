@@ -69,7 +69,7 @@ class _InputFieldState extends State<InputField> {
           ),
           MyInput(
               icon: Icons.title,
-              text: 'Title of task...',
+              text: 'Title task...',
               actionText: widget.listTitle,
               controller: widget.titleController),
           SizedBox(
@@ -77,7 +77,7 @@ class _InputFieldState extends State<InputField> {
           ),
           MyInput(
             icon: Icons.description,
-            text: 'Type of task...',
+            text: 'Type task...',
             actionText: widget.listType,
             controller: widget.typeController,
           ),
@@ -86,7 +86,7 @@ class _InputFieldState extends State<InputField> {
           ),
           MyInput(
               icon: Icons.access_time,
-              text: 'Time of task...',
+              text: 'Time task...',
               actionText: widget.listTime,
               controller: widget.timeController),
           SizedBox(
